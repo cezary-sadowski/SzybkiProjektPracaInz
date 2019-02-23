@@ -42,7 +42,7 @@ namespace pracainz.Controllers
         private double? CountOEE(double? dostepnosc, double? wydajnosc, double? jakosc)
         {
             if (dostepnosc == null || wydajnosc == null || jakosc == null)
-                return null;
+                return 0;
 
             else
                 return (dostepnosc * wydajnosc * jakosc) / 1000;
