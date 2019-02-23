@@ -1,0 +1,34 @@
+﻿@model IEnumerable<pracainz.Models.Zlecenie>
+
+@{
+    ViewBag.Title = "Aktywne Zlecenia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Aktywne zlecenia (ERP)</h2>
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Sztuki do wykonania</th>
+            <th scope="col">Sztuki dobrych</th>
+            <th scope="col">Sztuki zle</th>
+            <th scope="col">Czesc alternatywna</th>
+            <th scope="col">Status</th>
+            <th scope="col">Wskaźnik OEE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var model in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => model.SztukDoWykonania)</td>
+                <td>@Html.DisplayFor(m => model.SztukDobrych)</td>
+                <td>@Html.DisplayFor(m => model.SztukZlych)</td>
+                <td>@Html.DisplayFor(m => model.CzescAlternatywna)</td>
+                <td>@Html.DisplayFor(m => model.Status)</td>
+                <td class="danger">@Html.DisplayFor(m => model.OEE) %</td>
+            </tr>
+        }
+    </tbody>
+</table>
