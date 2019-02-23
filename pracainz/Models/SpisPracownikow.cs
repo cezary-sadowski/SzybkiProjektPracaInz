@@ -9,7 +9,8 @@ namespace pracainz.Models
     [Table("SpisPracownikow")]
     public partial class SpisPracownikow
     {
-        public int ID { get; set; }
+        [Key]
+        public int SpisID { get; set; }
 
         public int? Login { get; set; }
 

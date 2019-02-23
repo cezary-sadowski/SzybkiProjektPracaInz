@@ -10,15 +10,28 @@ namespace pracainz.Controllers
 {
     public class SpisPracownikowController : Controller
     {
-        // GET: SpisPracownikow
-        public ActionResult Random()
-        {
-            using (var ctx = new ERP_DB())
-            {
-                var spisPracownikow = ctx.SpisPracownikow.Where(sp => sp.CzyObecny == true);
+        private ERP_DB ctx;
 
-                return View(spisPracownikow);
-            }     
+        public SpisPracownikowController()
+        {
+            ctx = new ERP_DB();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            ctx.Dispose();
+        }
+
+        // GET: SpisPracownikow
+        public ViewResult Index()
+        {
+            var workers = GetActiveWorkers();
+            return View(workers);
+        }
+
+        private IEnumerable<SpisPracownikow> GetActiveWorkers()
+        {
+            return ctx.SpisPracownikow.Where(sp => sp.CzyObecny == true).ToList();
         }
     }
 }
