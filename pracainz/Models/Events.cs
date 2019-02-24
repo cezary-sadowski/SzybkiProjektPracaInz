@@ -26,5 +26,8 @@ namespace pracainz.Models
 
         [StringLength(4000)]
         public string Komentarz { get; set; }
+
+        [StringLength(100)]
+        public string NazwaOperatora { get; set; }
     }
 }

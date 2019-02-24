@@ -155,6 +155,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SpisPracownikowController.cs" />
     <Compile Include="Controllers\ZlecenieController.cs" />
@@ -209,10 +210,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\SpisPracownikow\Index.cshtml" />
     <Content Include="Views\Zlecenie\Index.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

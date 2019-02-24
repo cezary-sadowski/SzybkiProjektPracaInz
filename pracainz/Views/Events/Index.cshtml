@@ -1,0 +1,38 @@
+﻿@model IEnumerable<pracainz.Models.Events>
+
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Import danych z ERP</h2>
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID Zlecenia</th>
+            <th scope="col">Data Rozpoczecia</th>
+            <th scope="col">Data Zakonczenia</th>
+            <th scope="col">ID Operatora</th>
+            <th scope="col">Kod Produktu</th>
+            <th scope="col">Nazwa Produktu</th>
+            <th scope="col">Komentarz</th>
+            <th scope="col">Nazwa Operatora</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var model in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m => model.ZlecenieID)</td>
+            <td>@Html.DisplayFor(m => model.DataRozpoczecia)</td>
+            <td>@Html.DisplayFor(m => model.DataZakonczenia)</td>
+            <td>@Html.DisplayFor(m => model.OperatorId)</td>
+            <td>@Html.DisplayFor(m => model.KodProduktu)</td>
+            <td>@Html.DisplayFor(m => model.NazwaProduktu)</td>
+            <td class="warning">@Html.DisplayFor(m => model.Komentarz)</td>
+            <td>@Html.DisplayFor(m => model.NazwaOperatora)</td>
+        </tr>
+        }
+    </tbody>
+</table>
