@@ -35,11 +35,7 @@ namespace pracainz.Controllers
             return View(tasks);
         }
 
-        public ContentResult Rtf()
-        {
-            var rtf = Commons.ConvertRTF();
-            return Content(rtf);
-        }
+        public ContentResult Rtf() => Content(Commons.ConvertRTF());
 
         private IEnumerable<Zlecenie> GetTasks() => ctx.Zlecenie.ToList();
     }
