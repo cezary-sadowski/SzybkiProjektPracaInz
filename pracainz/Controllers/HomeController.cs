@@ -27,19 +27,7 @@ namespace pracainz.Controllers
             return View(zlecenie);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        public ActionResult Login() => View();
 
         private Zlecenie GetZlecenie() => ctx.Zlecenie.FirstOrDefault(z => z.ID == 1);
     }

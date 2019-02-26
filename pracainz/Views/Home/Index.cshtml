@@ -39,10 +39,10 @@
         <p class="alert-link">Licznik sztuk</p>
         <p>Sztuk do wykonania: @Model.SztukDoWykonania<span>, <b>Pozostałe sztuki: @pozostałeSztuki</b></span></p>
         <div class="progress">
-            <div class="progress-bar progress-bar-success progress-bar-striped" style="width: @greenProgress%">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: @greenProgress%">
                 <span style="font-size: 18px">Dobre: @Model.SztukDobrych sztuk</span>
             </div>
-            <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: @redProgress%">
+            <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: @redProgress%">
                 <span style="font-size: 18px">Złe: @Model.SztukZlych sztuk</span>
             </div>
         </div>
@@ -52,7 +52,7 @@
     <div class="alert alert-dismissable" role="alert">
         <p class="alert-link">OEE aktualnego zlecenia</p>
         <div class="progress">
-            <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="@oeeWithNoComma" aria-valuemin="0" aria-valuemax="100" style="width: @oeeWithNoComma%">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="@oeeWithNoComma" aria-valuemin="0" aria-valuemax="100" style="width: @oeeWithNoComma%">
                 <span style="font-size: 18px">@oeeWithNoComma%</span>
             </div>
         </div>
