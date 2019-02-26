@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using pracainz.Models;
+using pracainz.Methods;
 
 namespace pracainz.Controllers
 {
@@ -27,25 +28,13 @@ namespace pracainz.Controllers
             var tasks = GetTasks();
             foreach (var t in tasks)
             {
-                t.OEE = CountOEE(t.Dostepnosc, t.Wydajnosc, t.Jakosc);
+                t.OEE = Commons.CountOEE(t.Dostepnosc, t.Wydajnosc, t.Jakosc);
             }
             ctx.SaveChanges();
 
             return View(tasks);
         }
 
-        private IEnumerable<Zlecenie> GetTasks()
-        {
-            return ctx.Zlecenie.ToList();
-        }
-
-        private double? CountOEE(double? dostepnosc, double? wydajnosc, double? jakosc)
-        {
-            if (dostepnosc == null || wydajnosc == null || jakosc == null)
-                return 0;
-
-            else
-                return (dostepnosc * wydajnosc * jakosc) / 1000;
-        }
+        private IEnumerable<Zlecenie> GetTasks() => ctx.Zlecenie.ToList();
     }
 }

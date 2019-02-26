@@ -29,9 +29,6 @@ namespace pracainz.Controllers
             return View(workers);
         }
 
-        private IEnumerable<SpisPracownikow> GetActiveWorkers()
-        {
-            return ctx.SpisPracownikow.Where(sp => sp.CzyObecny == true).ToList();
-        }
+        private IEnumerable<SpisPracownikow> GetActiveWorkers() => ctx.SpisPracownikow.Where(sp => sp.CzyObecny == true).ToList();
     }
 }

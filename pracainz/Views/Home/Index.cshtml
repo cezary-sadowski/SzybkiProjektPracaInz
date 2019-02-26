@@ -1,31 +1,21 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model pracainz.Models.Zlecenie
+
+@{ 
+    var oee = Html.DisplayFor(m => Model.OEE);
+    var oeeWithNoComma = oee.ToString().Replace(",", ".");
 }
 
 <div class="jumbotron">
     <h2>Wizualizacja Pracy Stanowiska</h2>
-    <p class="lead">Opis</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <div class="alert alert-dismissable" role="alert">
+        <p class="alert-link">OEE aktualnego zlecenia:</p>
+        <div class="progress">
+            <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="@oeeWithNoComma" aria-valuemin="0" aria-valuemax="100" style="width: @oeeWithNoComma%">
+                <span style="font-size: 18px">@oeeWithNoComma%</span>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+

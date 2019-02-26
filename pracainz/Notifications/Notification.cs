@@ -8,7 +8,6 @@ namespace pracainz.Notifications
     internal class Notification
     {
         public List<PosredniaWezwaniaPracownicy> RawOperators { get; set; }
-        public List<SpisPracownikow> Operators { get; set; }
         public List<int> AcceptedTypes { get; set; }
         public int ActualOtType { get; set; }
         public string Nazwa { get; set; }
