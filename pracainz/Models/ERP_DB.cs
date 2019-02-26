@@ -16,6 +16,8 @@ namespace pracainz.Models
         public virtual DbSet<SpisPracownikow> SpisPracownikow { get; set; }
         public virtual DbSet<WzoryWezwan> WzoryWezwan { get; set; }
         public virtual DbSet<Zlecenie> Zlecenie { get; set; }
+        public virtual DbSet<PosredniaWezwaniaPracownicy> PosredniaWezwaniaPracownicy { get; set; }
+        public virtual DbSet<SpisWezwania> SpisWezwania { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

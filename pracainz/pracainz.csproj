@@ -52,6 +52,9 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="serwersms">
+      <HintPath>..\..\..\..\source\repos\BorgPlugin\BorgPlugin\Resources\serwersms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -159,14 +162,28 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SpisPracownikowController.cs" />
     <Compile Include="Controllers\ZlecenieController.cs" />
+    <Compile Include="Email\EmailClient.cs" />
+    <Compile Include="Email\EmailClientSmall.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ERP_DB.cs" />
     <Compile Include="Models\Events.cs" />
+    <Compile Include="Models\PosredniaWezwaniaPracownicy.cs" />
     <Compile Include="Models\SpisPracownikow.cs" />
+    <Compile Include="Models\SpisWezwania.cs" />
     <Compile Include="Models\WzoryWezwan.cs" />
     <Compile Include="Models\Zlecenie.cs" />
+    <Compile Include="Notifications\Notification.cs" />
+    <Compile Include="Notifications\NotificationBase.cs" />
+    <Compile Include="Notifications\NotificationEmail.cs" />
+    <Compile Include="Notifications\NotificationsGenerator.cs" />
+    <Compile Include="Notifications\NotificationSMS.cs" />
+    <Compile Include="Notifications\NotificationVerbal.cs" />
+    <Compile Include="Notifications\NotificationVoice.cs" />
+    <Compile Include="Notifications\SimpleAES.cs" />
+    <Compile Include="Notifications\SmsServer.cs" />
+    <Compile Include="Notifications\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
