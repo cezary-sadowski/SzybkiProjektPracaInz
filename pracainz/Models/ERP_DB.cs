@@ -18,6 +18,10 @@ namespace pracainz.Models
         public virtual DbSet<Zlecenie> Zlecenie { get; set; }
         public virtual DbSet<PosredniaWezwaniaPracownicy> PosredniaWezwaniaPracownicy { get; set; }
         public virtual DbSet<SpisWezwania> SpisWezwania { get; set; }
+        public virtual DbSet<KontrolaJakosci> KontrolaJakosci { get; set; }
+        public virtual DbSet<OgolneInfo> OgolneInfo { get; set; }
+        public virtual DbSet<Technolog> Technolog { get; set; }
+        public virtual DbSet<Wykresy> Wykresy { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
