@@ -1,12 +1,44 @@
 ﻿@model pracainz.Models.Zlecenie
 
-@{ 
+@{
     var oee = Html.DisplayFor(m => Model.OEE);
     var oeeWithNoComma = oee.ToString().Replace(",", ".");
+
+    string statusColor = GetColorStatus(Model.Status);
+
+    string GetColorStatus(string status)
+    {
+        switch (status)
+        {
+            case "Aktywny":
+                return statusColor = "green";
+
+            case "Przestój":
+                return statusColor = "red";
+
+            case "Zakończone":
+                return statusColor = "yellow";
+
+            default:
+                return statusColor = "yellow";
+        }
+    }
 }
 
 <div class="jumbotron">
-    <h2>Wizualizacja Pracy Stanowiska</h2>
+    <h2>Wizualizacja pracy stanowiska</h2>
+    <p>Status: <span style="color: @statusColor">@Html.DisplayFor(m => Model.Status)</span></p>
+    @* OEE *@
+    <div class="alert alert-dismissable" role="alert">
+        <p class="alert-link">OEE aktualnego zlecenia:</p>
+        <div class="progress">
+            <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="@oeeWithNoComma" aria-valuemin="0" aria-valuemax="100" style="width: @oeeWithNoComma%">
+                <span style="font-size: 18px">@oeeWithNoComma%</span>
+            </div>
+        </div>
+    </div>
+
+    @* SZTUKI *@
     <div class="alert alert-dismissable" role="alert">
         <p class="alert-link">OEE aktualnego zlecenia:</p>
         <div class="progress">
