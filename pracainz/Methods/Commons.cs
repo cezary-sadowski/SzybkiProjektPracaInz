@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using pracainz.Models;
+using System.Windows.Forms;
 
 namespace pracainz.Methods
 {
@@ -15,6 +16,19 @@ namespace pracainz.Methods
 
             else
                 return (dostepnosc * wydajnosc * jakosc) / 1000;
+        }
+
+        public static string ConvertRTF()
+        {
+            string path = @"C:\Users\cezary.sadowski\Desktop\projekt praca inz\pracainz\pracainz\label11.rtf";
+            RichTextBox rtBox = new RichTextBox();
+
+            string rtfText = System.IO.File.ReadAllText(path);
+            rtBox.Rtf = rtfText;
+            string plainText = rtBox.Text;
+
+            //System.IO.File.WriteAllText(@"@output", plainText);
+            return plainText;
         }
     }
 }
