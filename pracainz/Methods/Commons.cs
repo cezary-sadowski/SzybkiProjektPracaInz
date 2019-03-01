@@ -20,7 +20,7 @@ namespace pracainz.Methods
 
         public static string ConvertRTF()
         {
-            string path = @"C:\Users\cezary.sadowski\Desktop\projekt praca inz\pracainz\pracainz\label11.rtf";
+            string path = @"C:\_TMP\pracainz\pracainz\label11.rtf";
             RichTextBox rtBox = new RichTextBox();
 
             string rtfText = System.IO.File.ReadAllText(path);
