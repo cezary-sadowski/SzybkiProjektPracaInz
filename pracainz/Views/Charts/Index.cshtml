@@ -17,6 +17,10 @@
     <canvas id="time" style="max-width: 800px;"></canvas>
 </div>
 
+<div class="col-md-12">
+    <canvas id="oee" style="max-width: 800px;"></canvas>
+</div>
+
 <script src="Scripts/Chart.js"></script>
 <script>
     var ctx = document.getElementById("time").getContext('2d');
@@ -53,6 +57,31 @@
                         beginAtZero: true
                     }
                 }]
+            }
+        }
+    });
+
+</script>
+
+
+@*PRZYKŁADOWY WYKRES LINIOWY DLA OEE, BEZ DANYCH Z BAZY*@
+<script>
+    new Chart(document.getElementById("oee"), {
+        type: 'line',
+        data: {
+            labels: ['7:00', '9:00', '11:00', '13:00', '15:00', '17:00', '19:00', '21:00', '23:00', '01:00'],
+            datasets: [{
+                data: [75, 76.2, 78, 80.4, 79, 79.6, 81, 82.6, 83.4, 83.9],
+                label: "ZMIANA WSKAŹNIKA OEE DLA MASZYNY NA STANOWISKU, OEE(%)",
+                borderColor: "green",
+                fill: false
+            }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: ''
             }
         }
     });
