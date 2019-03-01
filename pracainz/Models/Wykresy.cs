@@ -11,16 +11,16 @@ namespace pracainz.Models
     {
         public int ID { get; set; }
 
-        public decimal? CzasPracyOperatora { get; set; }
+        public double? CzasPracyOperatora { get; set; }
 
-        public decimal? CzasPrzestoj { get; set; }
+        public double? CzasPrzestoj { get; set; }
 
-        public decimal? CzasPrzezbrojen { get; set; }
+        public double? CzasPrzezbrojen { get; set; }
 
-        public decimal? CzasKJ { get; set; }
+        public double? CzasKJ { get; set; }
 
-        public decimal? CzasTechnolog { get; set; }
+        public double? CzasTechnolog { get; set; }
 
-        public decimal? CzasAudyt { get; set; }
+        public double? CzasAudyt { get; set; }
     }
 }

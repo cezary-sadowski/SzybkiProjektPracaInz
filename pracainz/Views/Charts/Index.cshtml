@@ -1,0 +1,60 @@
+﻿@model pracainz.Models.Wykresy
+@{
+    ViewBag.Title = "Wykresy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var op = @Model.CzasPracyOperatora.ToString().Replace(",", ".");
+    var przestoj = @Model.CzasPrzestoj.ToString().Replace(",", ".");
+    var przezb = @Model.CzasPrzezbrojen.ToString().Replace(",", ".");
+    var kj = @Model.CzasKJ.ToString().Replace(",", ".");
+    var tech = @Model.CzasTechnolog.ToString().Replace(",", ".");
+    var audyt = @Model.CzasAudyt.ToString().Replace(",", ".");
+}
+
+<h2>Wykresy dostępne dla stanowiska</h2>
+
+<div class="col-md-12">
+    <canvas id="time" style="max-width: 800px;"></canvas>
+</div>
+
+<script src="Scripts/Chart.js"></script>
+<script>
+    var ctx = document.getElementById("time").getContext('2d');
+    var time = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Operator", "Przestój", "Przezbrojenie", "Kontrola Jakości", "Technolog", "Audyt"],
+            datasets: [{
+                label: 'PODZIAŁ CZASU PRACY NA STANOWISKU DLA OSTATNICH 3 ZMIAN',
+                data: [@op, @przestoj, @przezb, @kj, @tech, @audyt],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+</script>

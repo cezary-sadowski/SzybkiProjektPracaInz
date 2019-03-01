@@ -34,30 +34,6 @@ namespace pracainz.Models
                 .Property(e => e.TemperaturaNaHali)
                 .HasPrecision(18, 0);
 
-            modelBuilder.Entity<Wykresy>()
-                .Property(e => e.CzasPracyOperatora)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Wykresy>()
-                .Property(e => e.CzasPrzestoj)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Wykresy>()
-                .Property(e => e.CzasPrzezbrojen)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Wykresy>()
-                .Property(e => e.CzasKJ)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Wykresy>()
-                .Property(e => e.CzasTechnolog)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Wykresy>()
-                .Property(e => e.CzasAudyt)
-                .HasPrecision(18, 0);
-
             modelBuilder.Entity<spt_fallback_db>()
                 .Property(e => e.xserver_name)
                 .IsUnicode(false);
