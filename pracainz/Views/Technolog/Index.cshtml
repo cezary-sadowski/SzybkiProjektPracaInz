@@ -1,0 +1,32 @@
+﻿@model IEnumerable<pracainz.Models.Technolog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Technolog</h2>
+
+<table class="table table-striped table-dark">
+<thead>
+    <tr>
+        <th scope="col">Login technologa</th>
+        <th scope="col">Nazwa Technologa</th>
+        <th scope="col">Powod przestoju maszyny</th>
+        <th scope="col">Komentarz</th>
+        <th scope="col">Czy wznowiono prace</th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var model in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => model.LoginTechnologa)</td>
+            <td>@Html.DisplayFor(m => model.NazwaTechnologa)</td>
+            <td>@Html.DisplayFor(m => model.PowodPrzestoju)</td>
+            <td class="warning">@Html.DisplayFor(m => model.Komentarz)</td>
+            <td style="color: forestgreen"><b>@Html.DisplayFor(m => model.CzyProdukcjaWznowiona.Value) Produkcja wznowiona</b></td>
+        </tr>
+    }
+</tbody>
+</table>
