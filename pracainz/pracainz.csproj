@@ -281,6 +281,7 @@
     <Content Include="Views\Home\BigInput.cshtml" />
     <Content Include="Views\Traceability\Index.cshtml" />
     <Content Include="Views\Home\Magazyn.cshtml" />
+    <Content Include="Views\SpisPracownikow\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

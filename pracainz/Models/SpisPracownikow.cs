@@ -2,6 +2,7 @@ namespace pracainz.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -15,6 +16,7 @@ namespace pracainz.Models
         public int? Login { get; set; }
 
         [StringLength(100)]
+        [DisplayName("Nazwa pracownika")]
         public string ImieNaziwsko { get; set; }
 
         [StringLength(100)]
@@ -23,9 +25,11 @@ namespace pracainz.Models
         [StringLength(100)]
         public string Email { get; set; }
 
-        public bool? CzyObecny { get; set; }
+        [DisplayName("Obecny na produkcji")]
+        public bool CzyObecny { get; set; }
 
         [StringLength(100)]
+        [DisplayName("Typ pracownika")]
         public string TypPracownika { get; set; }
     }
 }
