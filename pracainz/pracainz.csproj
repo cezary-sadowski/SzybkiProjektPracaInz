@@ -163,6 +163,7 @@
     <Compile Include="Controllers\KontrolaJakosciController.cs" />
     <Compile Include="Controllers\SpisPracownikowController.cs" />
     <Compile Include="Controllers\TechnologController.cs" />
+    <Compile Include="Controllers\TraceabilityController.cs" />
     <Compile Include="Controllers\ZlecenieController.cs" />
     <Compile Include="Email\EmailClient.cs" />
     <Compile Include="Email\EmailClientSmall.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Models\spt_fallback_usg.cs" />
     <Compile Include="Models\spt_monitor.cs" />
     <Compile Include="Models\Technolog.cs" />
+    <Compile Include="Models\Traceability.cs" />
     <Compile Include="Models\Wykresy.cs" />
     <Compile Include="Models\WzoryWezwan.cs" />
     <Compile Include="Models\Zlecenie.cs" />
@@ -276,6 +278,9 @@
     <Content Include="Views\KontrolaJakosci\Index.cshtml" />
     <Content Include="Views\Technolog\Index.cshtml" />
     <Content Include="Views\Charts\Index.cshtml" />
+    <Content Include="Views\Home\BigInput.cshtml" />
+    <Content Include="Views\Traceability\Index.cshtml" />
+    <Content Include="Views\Home\Magazyn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

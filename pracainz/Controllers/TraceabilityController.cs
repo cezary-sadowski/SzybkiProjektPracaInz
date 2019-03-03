@@ -7,11 +7,11 @@ using pracainz.Models;
 
 namespace pracainz.Controllers
 {
-    public class HomeController : Controller
+    public class TraceabilityController : Controller
     {
         private ERP_DB ctx;
 
-        public HomeController()
+        public TraceabilityController()
         {
             ctx = new ERP_DB();
         }
@@ -21,16 +21,14 @@ namespace pracainz.Controllers
             ctx.Dispose();
         }
 
+        // GET: Traceability
         public ViewResult Index()
         {
-            var zlecenie = GetZlecenie();
-            return View(zlecenie);
+            var trace = GetTrace();
+
+            return View(trace);
         }
 
-        public ViewResult Login() => View();
-        public ViewResult BigInput() => View();
-        public ViewResult Magazyn() => View();
-
-        private Zlecenie GetZlecenie() => ctx.Zlecenie.FirstOrDefault(z => z.ID == 1);
+        private IEnumerable<Traceability> GetTrace() => ctx.Traceability.ToList();
     }
 }

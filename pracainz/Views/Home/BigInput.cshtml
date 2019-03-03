@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "BigInput";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Wysyłanie wiadomości SMS do pracownika: Anna Nowak</h4>
+
+
+<div class="container">
+    <div>
+        <br style="clear:both">
+        <div class="form-group col-md-4 ">
+            <label id="messageLabel" for="message">Wiadomość</label>
+            <textarea class="form-control input-sm " type="textarea" id="message" placeholder="Wpisz treść" maxlength="140" rows="7"></textarea>
+            <span class="help-block"><p id="characterLeft" class="help-block ">Pozostało znaków: 166</p></span>
+        </div>
+        <br style="clear:both">
+        <div class="form-group col-md-2">
+            <button class="form-control input-sm btn btn-info" id="btnSubmit" name="btnSubmit" type="button" style="height:35px">Wyślij</button>
+        </div>
+    </div>
+</div>
