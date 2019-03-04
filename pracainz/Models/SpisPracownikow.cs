@@ -15,6 +15,7 @@ namespace pracainz.Models
 
         public int? Login { get; set; }
 
+        [Required]
         [StringLength(100)]
         [DisplayName("Nazwa pracownika")]
         public string ImieNaziwsko { get; set; }

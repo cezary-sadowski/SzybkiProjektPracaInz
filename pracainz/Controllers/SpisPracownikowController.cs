@@ -37,6 +37,11 @@ namespace pracainz.Controllers
         [HttpPost]
         public ActionResult Save(SpisPracownikow worker)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("New", worker);
+            }
+
             if(worker.SpisID == 0)
                 ctx.SpisPracownikow.Add(worker);
 
