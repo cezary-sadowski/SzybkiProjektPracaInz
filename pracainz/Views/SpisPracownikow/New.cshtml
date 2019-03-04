@@ -21,6 +21,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.TypPracownika)
         @Html.TextBoxFor(m => m.TypPracownika, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TypPracownika)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Telefon)
@@ -35,7 +36,7 @@
             @Html.CheckBoxFor(m => m.CzyObecny) <b>Czy obecny na produkcji?</b>
         </label>
     </div>
-    @Html.HiddenFor(m => m.SpisID)
+    @Html.HiddenFor(m => m.SpisID) //nie działa dla dodawania.
     <button type="submit" class="btn btn-info">Zapisz</button>
 }
 

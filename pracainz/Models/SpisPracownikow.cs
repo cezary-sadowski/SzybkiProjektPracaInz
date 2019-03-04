@@ -31,6 +31,7 @@ namespace pracainz.Models
 
         [StringLength(100)]
         [DisplayName("Typ pracownika")]
+        [SpisPracownikowValidation]
         public string TypPracownika { get; set; }
     }
 }

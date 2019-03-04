@@ -176,6 +176,7 @@
     <Compile Include="Models\KontrolaJakosci.cs" />
     <Compile Include="Models\MSreplication_options.cs" />
     <Compile Include="Models\OgolneInfo.cs" />
+    <Compile Include="Models\SpisPracownikowValidation.cs" />
     <Compile Include="Models\PosredniaWezwaniaPracownicy.cs" />
     <Compile Include="Models\Rtf.cs" />
     <Compile Include="Models\SpisPracownikow.cs" />
