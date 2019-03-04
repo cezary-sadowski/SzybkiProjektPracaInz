@@ -82,7 +82,7 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="serwersms">
-      <HintPath>..\..\..\..\source\repos\BorgPlugin\BorgPlugin\Resources\serwersms.dll</HintPath>
+      <HintPath>..\..\serwersms-csharp-api\bin\Release\serwersms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
