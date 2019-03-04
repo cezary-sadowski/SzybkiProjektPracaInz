@@ -25,11 +25,17 @@ namespace pracainz.Controllers
         // GET: SpisPracownikow
         public ViewResult Index()
         {
-            var workers = GetActiveWorkers();
+            var workers = GetActiveWorkers(); 
             return View(workers);
         }
 
-        public ActionResult New()
+        public ViewResult New()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(SpisPracownikow spisPracownikow)
         {
             return View();
         }
