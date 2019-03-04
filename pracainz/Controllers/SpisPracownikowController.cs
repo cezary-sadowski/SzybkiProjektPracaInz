@@ -25,7 +25,7 @@ namespace pracainz.Controllers
         // GET: SpisPracownikow
         public ViewResult Index()
         {
-            var workers = GetActiveWorkers(); 
+            var workers = GetActiveWorkers();
             return View(workers);
         }
 
@@ -35,12 +35,35 @@ namespace pracainz.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(SpisPracownikow spisPracownikow)
+        public ActionResult Save(SpisPracownikow worker)
         {
-            ctx.SpisPracownikow.Add(spisPracownikow);
+            if(worker.SpisID == 0)
+                ctx.SpisPracownikow.Add(worker);
+
+            else
+            {
+                var workerInDb = ctx.SpisPracownikow.Single(sp => sp.SpisID == worker.SpisID);
+                workerInDb.CzyObecny = worker.CzyObecny;
+                workerInDb.Email = worker.Email;
+                workerInDb.ImieNaziwsko = worker.ImieNaziwsko;
+                workerInDb.Login = worker.Login;
+                workerInDb.Telefon = worker.Telefon;
+                workerInDb.TypPracownika = worker.TypPracownika;
+            }
+
             ctx.SaveChanges();
 
             return RedirectToAction("Index", "SpisPracownikow");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var worker = ctx.SpisPracownikow.SingleOrDefault(sp => sp.SpisID == id);
+
+            if (worker == null)
+                return HttpNotFound();
+
+            return View("New", worker);
         }
 
         private IEnumerable<SpisPracownikow> GetActiveWorkers() => ctx.SpisPracownikow.Where(sp => sp.CzyObecny == true).ToList();

@@ -7,7 +7,7 @@
 
 <h2>Nowy pracownik</h2>
 
-@using (Html.BeginForm("Create", "SpisPracownikow"))
+@using (Html.BeginForm("Save", "SpisPracownikow"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Login)
@@ -34,6 +34,7 @@
             @Html.CheckBoxFor(m => m.CzyObecny) <b>Czy obecny na produkcji?</b>
         </label>
     </div>
-    <button type="submit" class="btn btn-info">Dodaj</button>
+    @Html.HiddenFor(m => m.SpisID)
+    <button type="submit" class="btn btn-info">Zapisz</button>
 }
 

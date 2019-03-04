@@ -23,7 +23,7 @@
         {
         <tr>
             <td>@Html.DisplayFor(m => model.Login)</td>
-            <td>@Html.DisplayFor(m => model.ImieNaziwsko)</td>
+            <td>@Html.DisplayFor(m => model.ImieNaziwsko) | @Html.ActionLink("Edit", "Edit", new { id = model.SpisID })</td>
             <td>@Html.DisplayFor(m => model.Telefon)</td>
             <td>@Html.DisplayFor(m => model.Email)</td>
             <td style="color: forestgreen"><b>@Html.DisplayFor(m => model.CzyObecny) Na produkcji 
