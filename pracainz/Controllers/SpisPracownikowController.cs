@@ -37,7 +37,10 @@ namespace pracainz.Controllers
         [HttpPost]
         public ActionResult Create(SpisPracownikow spisPracownikow)
         {
-            return View();
+            ctx.SpisPracownikow.Add(spisPracownikow);
+            ctx.SaveChanges();
+
+            return RedirectToAction("Index", "SpisPracownikow");
         }
 
         private IEnumerable<SpisPracownikow> GetActiveWorkers() => ctx.SpisPracownikow.Where(sp => sp.CzyObecny == true).ToList();
